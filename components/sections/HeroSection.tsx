@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei'
@@ -27,6 +27,9 @@ function AnimatedSphere() {
 
 export function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null)
+  const avatarWrapperRef = useRef<HTMLDivElement>(null)
+  const [orbitRadius, setOrbitRadius] = useState<number>(200)
+  const iconSize = 48
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -43,6 +46,18 @@ export function HeroSection() {
 
     window.addEventListener('mousemove', handleMouseMove)
     return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [])
+
+  useEffect(() => {
+    const updateRadius = () => {
+      if (!avatarWrapperRef.current) return
+      const width = avatarWrapperRef.current.offsetWidth
+      const r = width / 2 + iconSize / 2 + 40 // Increased spacing from 12 to 40
+      setOrbitRadius(r)
+    }
+    updateRadius()
+    window.addEventListener('resize', updateRadius)
+    return () => window.removeEventListener('resize', updateRadius)
   }, [])
 
   const socialLinks = [
@@ -192,7 +207,7 @@ export function HeroSection() {
             className="relative flex items-center justify-center"
           >
             {/* Avatar Container */}
-            <div className="relative w-80 h-80 md:w-96 md:h-96">
+            <div ref={avatarWrapperRef} className="relative w-80 h-80 md:w-96 md:h-96">
               {/* Glowing Background */}
               <div className="absolute inset-0 bg-gradient-to-r from-neon-blue/20 to-neon-purple/20 rounded-full blur-3xl animate-pulse-slow" />
               
@@ -200,22 +215,36 @@ export function HeroSection() {
               <motion.div
                 animate={{ 
                   rotateY: [0, 360],
-                  scale: [1, 1.05, 1]
+                  scale: [1, 1.05, 1],
+                  rotateZ: [0, 5, -5, 0]
                 }}
                 transition={{ 
                   rotateY: { duration: 20, repeat: Infinity, ease: 'linear' },
-                  scale: { duration: 4, repeat: Infinity, ease: 'easeInOut' }
+                  scale: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                  rotateZ: { duration: 8, repeat: Infinity, ease: 'easeInOut' }
                 }}
-                className="relative w-full h-full rounded-full overflow-hidden glass border-4 border-white/20"
+                className="relative z-10 w-full h-full rounded-full overflow-hidden glass border-4 border-white/20"
               >
                 <div className="w-full h-full bg-gradient-to-br from-neon-blue/30 to-neon-purple/30 flex items-center justify-center">
-                  {/* Placeholder for 3D Avatar or Image */}
-                  <div className="text-6xl">🚀</div>
+                  {/* Animated Rocket */}
+                  <motion.div 
+                    className="text-6xl"
+                    animate={{
+                      y: [0, -10, 0],
+                      rotateZ: [0, 10, -10, 0]
+                    }}
+                    transition={{
+                      y: { duration: 3, repeat: Infinity, ease: 'easeInOut' },
+                      rotateZ: { duration: 6, repeat: Infinity, ease: 'easeInOut' }
+                    }}
+                  >
+                    🚀
+                  </motion.div>
                 </div>
               </motion.div>
 
               {/* Skill Orbit */}
-              <SkillOrbit />
+              <SkillOrbit radius={orbitRadius} zIndex={20} />
             </div>
           </motion.div>
         </div>

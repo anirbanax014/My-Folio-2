@@ -13,13 +13,12 @@ const skills = [
   { icon: '⚙️', name: 'Kubernetes', color: '#326CE5' },
 ]
 
-export function SkillOrbit() {
+export function SkillOrbit({ radius = 180, iconSize = 48, zIndex = 0 }: { radius?: number; iconSize?: number; zIndex?: number }) {
   return (
-    <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute inset-0 pointer-events-none" style={{ zIndex }}>
       {skills.map((skill, index) => {
         const angle = (index / skills.length) * 360
-        const radius = 180
-        
+                
         return (
           <motion.div
             key={skill.name}
@@ -41,14 +40,12 @@ export function SkillOrbit() {
               style={{
                 transform: `translate(-50%, -50%) translateX(${radius}px)`,
               }}
-              whileHover={{ scale: 1.2 }}
+              whileHover={{ scale: 1.3 }}
               animate={{
                 rotate: [0, -360],
               }}
               transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: 'linear',
+                rotate: { duration: 20, repeat: Infinity, ease: 'linear' },
               }}
             >
               <span 

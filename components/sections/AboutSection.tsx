@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { Code, Brain, Rocket, Coffee, Gamepad2, Music } from 'lucide-react'
+import { Code, Brain, Rocket, Coffee, Gamepad2, BookOpen } from 'lucide-react'
 
 const funFacts = [
   { icon: Code, text: "10,000+ lines of code written this year", color: "text-neon-blue" },
@@ -10,7 +10,7 @@ const funFacts = [
   { icon: Rocket, text: "5+ successful product launches", color: "text-neon-pink" },
   { icon: Coffee, text: "Coffee-driven development", color: "text-amber-400" },
   { icon: Gamepad2, text: "Gaming in free time ⚽", color: "text-green-400" },
-  { icon: Music, text: "Lo-fi music while coding", color: "text-blue-400" },
+  { icon: BookOpen, text: "Always learning new technologies", color: "text-blue-400" },
 ]
 
 const skills = [

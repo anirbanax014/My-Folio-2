@@ -4,7 +4,6 @@ import './globals.css'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { CustomCursor } from '@/components/ui/CustomCursor'
 import { ParticleBackground } from '@/components/ui/ParticleBackground'
-import { MusicPlayer } from '@/components/ui/MusicPlayer'
 import { PWAInstall } from '@/components/ui/PWAInstall'
 import { Toaster } from 'react-hot-toast'
 
@@ -91,7 +90,6 @@ export default function RootLayout({
           <main className="relative z-10">
             {children}
           </main>
-          <MusicPlayer />
           <PWAInstall />
           <Toaster
             position="top-right"

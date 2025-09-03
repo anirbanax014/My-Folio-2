@@ -208,13 +208,6 @@ body {
   box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
 }
 
-/* Music player styles */
-.music-player {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-}
 
 /* PWA styles */
 .pwa-install {
@@ -262,4 +255,32 @@ body {
 ::selection {
   background: rgba(0, 212, 255, 0.3);
   color: white;
+}
+
+/* Light mode text color overrides - Dark theme remains unchanged */
+[data-theme="light"] .text-white,
+:root:not([data-theme="dark"]) .text-white {
+  color: rgb(31, 41, 55) !important; /* gray-800 */
+}
+
+[data-theme="light"] .text-gray-300,
+:root:not([data-theme="dark"]) .text-gray-300 {
+  color: rgb(75, 85, 99) !important; /* gray-600 */
+}
+
+[data-theme="light"] .text-gray-400,
+:root:not([data-theme="dark"]) .text-gray-400 {
+  color: rgb(107, 114, 128) !important; /* gray-500 */
+}
+
+[data-theme="light"] .text-gray-500,
+:root:not([data-theme="dark"]) .text-gray-500 {
+  color: rgb(107, 114, 128) !important; /* gray-500 */
+}
+
+/* Light mode glass effects - Dark theme glass remains unchanged */
+[data-theme="light"] .glass,
+:root:not([data-theme="dark"]) .glass {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
