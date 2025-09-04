@@ -11,18 +11,23 @@ const skillCategories = [
     name: "Frontend",
     color: "#61DAFB",
     skills: [
-      { name: "React", icon: '⚛️', level: 95, projects: ["E-commerce Platform", "Dashboard App"] },
+      { name: "React", icon: '⚛️', level: 90, projects: ["E-commerce Platform", "Dashboard App"] },
       { name: "Next.js", icon: '▲', level: 90, projects: ["Portfolio Site", "Blog Platform"] },
-      { name: "TypeScript", icon: '📘', level: 88, projects: ["Type-safe APIs", "Component Library"] },
+      { name: "TypeScript", icon: 'TS', level: 70, projects: ["Type-safe APIs", "Component Library"] },
+      { name: "JavaScript", icon: 'JS', level: 90, projects: ["Interactive UIs", "Web Apps"] },
+      { name: "HTML5", icon: '🌐', level: 95, projects: ["Semantic Web", "Accessibility"] },
+      { name: "CSS3", icon: '🎨', level: 96, projects: ["Responsive Design", "Animations"] },
     ]
   },
   {
     name: "Backend",
     color: "#68D391",
     skills: [
+      { name: "Node.js", icon: '🟢', level: 80, projects: ["REST APIs", "Real-time Apps"] },
       { name: "Python", icon: '🐍', level: 92, projects: ["ML Pipeline", "API Services"] },
-      { name: "PostgreSQL", icon: '🐘', level: 85, projects: ["Data Analytics", "User Management"] },
-      { name: "MongoDB", icon: '🍃', level: 80, projects: ["Content Management", "Real-time Chat"] },
+      { name: "PostgreSQL", icon: '🐘', level: 70, projects: ["Data Analytics", "User Management"] },
+      { name: "MongoDB", icon: '🍃', level: 75, projects: ["Content Management", "Real-time Chat"] },
+      { name: "Express", icon: '🚀', level: 70, projects: ["Web APIs", "Middleware"] },
     ]
   },
   {
@@ -30,16 +35,20 @@ const skillCategories = [
     color: "#F687B3",
     skills: [
       { name: "TensorFlow", icon: '🧠', level: 85, projects: ["Image Recognition", "NLP Models"] },
-      { name: "PyTorch", icon: '🧠', level: 82, projects: ["Deep Learning", "Computer Vision"] },
+      { name: "PyTorch", icon: '🔥', level: 76, projects: ["Deep Learning", "Computer Vision"] },
+      { name: "OpenAI", icon: '🤖', level: 78, projects: ["GPT Integration", "AI Chatbots"] },
+      { name: "Hugging Face", icon: '🤗', level: 60, projects: ["Model Fine-tuning", "NLP Tasks"] },
     ]
   },
   {
-    name: "DevOps",
+    name: "Cloud & DevOps",
     color: "#9F7AEA",
     skills: [
-      { name: "AWS", icon: '☁️', level: 88, projects: ["Cloud Infrastructure", "Serverless Apps"] },
-      { name: "Docker", icon: '🐳', level: 90, projects: ["Containerization", "Microservices"] },
-      { name: "Kubernetes", icon: '⚙️', level: 75, projects: ["Orchestration", "Scaling"] },
+      { name: "AWS", icon: '☁️', level: 50, projects: ["Cloud Infrastructure", "Serverless Apps"] },
+      { name: "Google Cloud", icon: '🌩️', level: 70, projects: ["ML Platform", "Data Pipeline"] },
+      { name: "Docker", icon: '🐳', level: 60, projects: ["Containerization", "Microservices"] },
+      { name: "Git", icon: '📝', level: 90, projects: ["Version Control", "Collaboration"] },
+      { name: "Vercel", icon: '▲', level: 85, projects: ["Deployment", "CI/CD"] },
     ]
   }
 ]
@@ -70,29 +79,46 @@ function SkillGlobe() {
         const z = radius * Math.sin(theta) * Math.sin(phi)
 
         return (
-          <Billboard key={skill.name} position={[x, y, z]}>
+          <group key={skill.name} position={[x, y, z]}>
             <mesh
               onPointerEnter={() => setHoveredSkill(skill.name)}
               onPointerLeave={() => setHoveredSkill(null)}
-              scale={hoveredSkill === skill.name ? 1.5 : 1}
+              scale={hoveredSkill === skill.name ? 1.3 : 1}
             >
-              <sphereGeometry args={[0.2, 16, 16]} />
+              <sphereGeometry args={[0.25, 16, 16]} />
               <meshStandardMaterial 
                 color={skill.categoryColor} 
                 emissive={hoveredSkill === skill.name ? skill.categoryColor : '#000000'}
-                emissiveIntensity={hoveredSkill === skill.name ? 0.3 : 0}
+                emissiveIntensity={hoveredSkill === skill.name ? 0.4 : 0}
+                transparent
+                opacity={0.9}
               />
             </mesh>
-            <Text
-              position={[0, -0.4, 0]}
-              fontSize={0.15}
-              color="white"
-              anchorX="center"
-              anchorY="middle"
-            >
-              {skill.name}
-            </Text>
-          </Billboard>
+            
+            <Billboard>
+              <Text
+                position={[0, 0, 0.26]}
+                fontSize={0.2}
+                color="white"
+                anchorX="center"
+                anchorY="middle"
+              >
+                {skill.icon}
+              </Text>
+            </Billboard>
+            
+            <Billboard>
+              <Text
+                position={[0, -0.5, 0]}
+                fontSize={0.1}
+                color={hoveredSkill === skill.name ? "#ffffff" : "#aaaaaa"}
+                anchorX="center"
+                anchorY="middle"
+              >
+                {skill.name}
+              </Text>
+            </Billboard>
+          </group>
         )
       })}
     </group>
@@ -146,7 +172,7 @@ export function SkillsSection() {
             {/* Globe Instructions */}
             <div className="absolute bottom-4 left-4 right-4 text-center">
               <p className="text-sm text-gray-400">
-                🖱️ Drag to rotate • Hover to highlight
+                 Drag to rotate • Hover to highlight
               </p>
             </div>
           </motion.div>
@@ -250,11 +276,11 @@ export function SkillsSection() {
               <h3 className="text-xl font-bold mb-4">Skill Highlights</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-neon-blue">16+</div>
+                  <div className="text-2xl font-bold text-neon-blue">10+</div>
                   <div className="text-sm text-gray-400">Technologies</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-neon-purple">5+</div>
+                  <div className="text-2xl font-bold text-neon-purple">3+</div>
                   <div className="text-sm text-gray-400">Years Experience</div>
                 </div>
               </div>

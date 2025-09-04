@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: 'Your Name - Ultra Modern Portfolio',
   description: 'Next-generation interactive portfolio showcasing cutting-edge development skills and innovative projects.',
   keywords: 'developer, portfolio, web development, AI, machine learning, full stack',
-  authors: [{ name: 'Your Name' }],
+  authors: [{ name: 'Anirban Das' }],
   creator: 'Your Name',
   publisher: 'Your Name',
   formatDetection: {

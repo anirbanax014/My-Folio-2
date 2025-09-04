@@ -6,7 +6,6 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei'
 import { Download, Mail, Github, Linkedin, Twitter } from 'lucide-react'
 import { TypedText } from '@/components/ui/TypedText'
-import { SkillOrbit } from '@/components/ui/SkillOrbit'
 import { FloatingElements } from '@/components/ui/FloatingElements'
 
 function AnimatedSphere() {
@@ -61,9 +60,9 @@ export function HeroSection() {
   }, [])
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/yourusername', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com/yourusername', label: 'Twitter' },
+    { icon: Github, href: 'https://github.com/anirbanax014', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/anirban-das-79841a2b6?trk=contact-info', label: 'LinkedIn' },
+    { icon: Twitter, href: 'https://x.com/Roni93862011530', label: 'Twitter' },
   ]
 
   return (
@@ -109,7 +108,7 @@ export function HeroSection() {
               transition={{ delay: 0.4 }}
               className="text-5xl md:text-7xl font-bold mb-6"
             >
-              <span className="text-shimmer">Your Name</span>
+              <span className="text-shimmer">Anirban Das</span>
             </motion.h1>
 
             {/* Typed Text */}
@@ -140,9 +139,8 @@ export function HeroSection() {
               transition={{ delay: 0.8 }}
               className="text-lg text-gray-300 mb-8 max-w-2xl"
             >
-              Passionate about creating cutting-edge solutions that bridge the gap between 
-              innovative technology and real-world impact. Specializing in AI-driven applications, 
-              cloud-native architectures, and immersive user experiences.
+              Passionate about building next-gen solutions that merge full-stack development with real-world impact. Skilled as an AI 
+              developer, in cloud-native architectures, and crafting seamless, interactive user experiences.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -152,14 +150,15 @@ export function HeroSection() {
               transition={{ delay: 1 }}
               className="flex flex-col sm:flex-row gap-4 mb-8"
             >
-              <motion.button
+              <motion.a
+                href="mailto:rd0497034@gmail.com?subject=Hiring%20Inquiry%20-%20Full%20Stack%20Developer&body=Hi%20Anirban%2C%0A%0AI%20hope%20this%20email%20finds%20you%20well.%20I%20came%20across%20your%20portfolio%20and%20I%27m%20impressed%20with%20your%20work%20and%20technical%20expertise.%0A%0AWe%20are%20currently%20looking%20for%20a%20talented%20developer%20to%20join%20our%20team%20and%20would%20love%20to%20discuss%20potential%20opportunities%20with%20you.%0A%0AProject%2FRole%20Details%3A%0A-%20Position%3A%20%5BPlease%20specify%5D%0A-%20Company%3A%20%5BYour%20Company%20Name%5D%0A-%20Project%20Type%3A%20%5BWeb%20Development%2FAI%2FCloud%2FMobile%2FOther%5D%0A-%20Duration%3A%20%5BFull-time%2FContract%2FProject-based%5D%0A-%20Budget%2FSalary%20Range%3A%20%5BPlease%20specify%5D%0A-%20Timeline%3A%20%5BWhen%20do%20you%20need%20to%20start%3F%5D%0A%0AProject%20Requirements%3A%0A-%20%5BPlease%20describe%20the%20project%20or%20role%20requirements%5D%0A-%20%5BTechnologies%20needed%5D%0A-%20%5BAny%20specific%20skills%20or%20experience%20required%5D%0A%0AI%20would%20love%20to%20schedule%20a%20call%20to%20discuss%20this%20opportunity%20in%20more%20detail.%20Please%20let%20me%20know%20your%20availability.%0A%0AThank%20you%20for%20your%20time%20and%20consideration.%0A%0ABest%20regards%2C%0A%5BYour%20Name%5D%0A%5BYour%20Contact%20Information%5D"
                 whileHover={{ scale: 1.05, boxShadow: '0 0 25px rgba(0, 212, 255, 0.5)' }}
                 whileTap={{ scale: 0.95 }}
                 className="magnetic px-8 py-4 bg-gradient-to-r from-neon-blue to-neon-purple text-white font-semibold rounded-full hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Mail size={20} />
                 Hire Me
-              </motion.button>
+              </motion.a>
               
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -208,43 +207,61 @@ export function HeroSection() {
           >
             {/* Avatar Container */}
             <div ref={avatarWrapperRef} className="relative w-80 h-80 md:w-96 md:h-96">
-              {/* Glowing Background */}
+              {/* Outer Glow Ring */}
               <div className="absolute inset-0 bg-gradient-to-r from-neon-blue/20 to-neon-purple/20 rounded-full blur-3xl animate-pulse-slow" />
+              
+              {/* Multiple Glow Layers */}
+              <motion.div
+                animate={{
+                  boxShadow: [
+                    '0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(0, 212, 255, 0.2), 0 0 60px rgba(0, 212, 255, 0.1)',
+                    '0 0 30px rgba(147, 51, 234, 0.4), 0 0 60px rgba(147, 51, 234, 0.3), 0 0 90px rgba(147, 51, 234, 0.2)',
+                    '0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(0, 212, 255, 0.2), 0 0 60px rgba(0, 212, 255, 0.1)'
+                  ]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: 'easeInOut'
+                }}
+                className="absolute inset-2 rounded-full"
+              />
               
               {/* Avatar Image */}
               <motion.div
                 animate={{ 
-                  rotateY: [0, 360],
-                  scale: [1, 1.05, 1],
-                  rotateZ: [0, 5, -5, 0]
+                  scale: [1, 1.02, 1],
                 }}
                 transition={{ 
-                  rotateY: { duration: 20, repeat: Infinity, ease: 'linear' },
                   scale: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
-                  rotateZ: { duration: 8, repeat: Infinity, ease: 'easeInOut' }
                 }}
                 className="relative z-10 w-full h-full rounded-full overflow-hidden glass border-4 border-white/20"
+                style={{
+                  boxShadow: '0 0 25px rgba(0, 212, 255, 0.4), 0 0 50px rgba(147, 51, 234, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.1)'
+                }}
               >
-                <div className="w-full h-full bg-gradient-to-br from-neon-blue/30 to-neon-purple/30 flex items-center justify-center">
-                  {/* Animated Rocket */}
-                  <motion.div 
-                    className="text-6xl"
+                <div className="w-full h-full bg-gradient-to-br from-neon-blue/30 to-neon-purple/30 flex items-center justify-center relative overflow-hidden">
+                  {/* Stable Profile Image */}
+                  <img
+                    src="/hero-image.jpg"
+                    alt="Anirban Das"
+                    className="w-full h-full object-cover"
+                  />
+                  
+                  {/* Floating overlay effects */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-neon-blue/10 to-neon-purple/10"
                     animate={{
-                      y: [0, -10, 0],
-                      rotateZ: [0, 10, -10, 0]
+                      opacity: [0.3, 0.6, 0.3],
                     }}
                     transition={{
-                      y: { duration: 3, repeat: Infinity, ease: 'easeInOut' },
-                      rotateZ: { duration: 6, repeat: Infinity, ease: 'easeInOut' }
+                      duration: 5, 
+                      repeat: Infinity, 
+                      ease: 'easeInOut'
                     }}
-                  >
-                    🚀
-                  </motion.div>
+                  />
                 </div>
               </motion.div>
-
-              {/* Skill Orbit */}
-              <SkillOrbit radius={orbitRadius} zIndex={20} />
             </div>
           </motion.div>
         </div>

@@ -13,7 +13,7 @@ export function Footer() {
     const updateTime = () => {
       const now = new Date()
       setCurrentTime(now.toLocaleTimeString('en-US', {
-        timeZone: 'America/Los_Angeles',
+        timeZone: 'Asia/Kolkata',
         hour12: true,
         hour: '2-digit',
         minute: '2-digit',
@@ -60,10 +60,10 @@ export function Footer() {
   ]
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/yourusername', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com/yourusername', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:hello@yourname.com', label: 'Email' },
+    { icon: Github, href: 'https://github.com/anirbanax014', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/anirban-das-79841a2b6?trk=contact-info', label: 'LinkedIn' },
+    { icon: Twitter, href: 'https://x.com/Roni93862011530', label: 'Twitter' },
+    { icon: Mail, href: 'mailto:rd0497034@gmail.com', label: 'Email' },
   ]
 
   return (
@@ -80,9 +80,9 @@ export function Footer() {
           >
             <div className="flex items-center mb-4">
               <div className="w-10 h-10 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">Y</span>
+                <span className="text-white font-bold text-lg">AD.</span>
               </div>
-              <span className="ml-2 text-xl font-bold text-shimmer">Your Name</span>
+              <span className="ml-2 text-xl font-bold text-shimmer">Anirban Das</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Full-stack developer and AI enthusiast passionate about creating innovative 
@@ -92,7 +92,7 @@ export function Footer() {
             {/* Live Clock */}
             <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
               <Clock size={16} />
-              <span>San Francisco, CA</span>
+              <span>Kolkata, India</span>
               <span className="text-neon-blue font-mono">{currentTime}</span>
             </div>
 
@@ -166,12 +166,12 @@ export function Footer() {
               <div className="flex items-center gap-2 text-gray-300 text-sm">
                 <Mail size={16} className="text-neon-blue" />
                 <a href="mailto:hello@yourname.com" className="hover:text-neon-blue transition-colors">
-                  hello@yourname.com
+                  anirbandas474671@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2 text-gray-300 text-sm">
                 <MapPin size={16} className="text-neon-purple" />
-                <span>San Francisco, CA</span>
+                <span>Kolkata, India</span>
               </div>
             </div>
 
@@ -201,7 +201,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Copyright */}
             <div className="flex items-center gap-2 text-gray-400 text-sm">
-              <span>© 2024 Your Name. Made with</span>
+              <span>© 2024 Anirban Das. Made with</span>
               <Heart size={16} className="text-red-400 animate-pulse" />
               <span>and lots of coffee ☕</span>
             </div>

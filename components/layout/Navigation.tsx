@@ -90,9 +90,9 @@ export function Navigation() {
               className="flex items-center"
             >
               <div className="w-10 h-10 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">Y</span>
+                <span className="text-white font-bold text-lg">AD.</span>
               </div>
-              <span className="ml-2 text-xl font-bold text-shimmer">Your Name</span>
+              <span className="ml-2 text-xl font-bold text-shimmer">Anirban Das</span>
             </motion.div>
 
             {/* Desktop Navigation */}

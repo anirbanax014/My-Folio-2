@@ -6,8 +6,8 @@ import { Code, Brain, Rocket, Coffee, Gamepad2, BookOpen } from 'lucide-react'
 
 const funFacts = [
   { icon: Code, text: "10,000+ lines of code written this year", color: "text-neon-blue" },
-  { icon: Brain, text: "AI enthusiast since 2020", color: "text-neon-purple" },
-  { icon: Rocket, text: "5+ successful product launches", color: "text-neon-pink" },
+  { icon: Brain, text: "AI enthusiast since 2024", color: "text-neon-purple" },
+  { icon: Rocket, text: "5+ successful project launches", color: "text-neon-pink" },
   { icon: Coffee, text: "Coffee-driven development", color: "text-amber-400" },
   { icon: Gamepad2, text: "Gaming in free time ⚽", color: "text-green-400" },
   { icon: BookOpen, text: "Always learning new technologies", color: "text-blue-400" },
@@ -15,10 +15,10 @@ const funFacts = [
 
 const skills = [
   { category: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS"], progress: 95 },
-  { category: "Backend", items: ["Node.js", "Python", "PostgreSQL", "MongoDB"], progress: 90 },
-  { category: "AI/ML", items: ["TensorFlow", "PyTorch", "OpenAI", "Hugging Face"], progress: 85 },
-  { category: "Cloud", items: ["AWS", "Docker", "Kubernetes", "Terraform"], progress: 88 },
-  { category: "Tools", items: ["Git", "VS Code", "Figma", "Postman"], progress: 92 },
+  { category: "Backend", items: ["Node.js", "Python", "PostgreSQL", "MongoDB"], progress: 81 },
+  { category: "AI/ML", items: ["TensorFlow", "PyTorch", "OpenAI", "Hugging Face"], progress: 60 },
+  { category: "Cloud", items: ["AWS", "Docker", "Google Cloud"], progress: 40 },
+  { category: "Tools", items: ["Git", "VS Code", "Figma", "Vercel"], progress: 92 },
 ]
 
 export function AboutSection() {
@@ -57,10 +57,11 @@ export function AboutSection() {
                 className="relative w-64 h-64 mx-auto lg:mx-0 rounded-2xl overflow-hidden glass border-2 border-white/20"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/20 to-neon-purple/20" />
-                <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                  {/* Replace with actual image */}
-                  <div className="text-6xl">👨‍💻</div>
-                </div>
+                <img 
+                  src="/WhatsApp Image 2025-09-03 at 23.08.09_0b210517.jpg"
+                  alt="Profile Picture"
+                  className="w-full h-full object-cover"
+                />
                 
                 {/* Floating badges */}
                 <motion.div
@@ -76,15 +77,12 @@ export function AboutSection() {
             {/* Bio */}
             <div className="space-y-4 text-gray-300">
               <p className="text-lg leading-relaxed">
-                Hello! I'm a passionate full-stack developer and AI enthusiast with over 5 years 
-                of experience creating innovative digital solutions. My journey began with a simple 
-                "Hello World" and has evolved into building complex, scalable applications that 
-                impact thousands of users.
+           Hello! I'm a passionate full-stack developer and AI/ML enthusiast, focused on creating impactful and innovative solutions. From building real-time surveillance and women safety
+            applications to developing intelligent systems for daily life, my work bridges technology with real-world needs.
               </p>
               <p className="text-lg leading-relaxed">
-                I specialize in modern web technologies, cloud architecture, and artificial 
-                intelligence. When I'm not coding, you'll find me exploring the latest tech trends, 
-                contributing to open-source projects, or enjoying a good game of football.
+            I specialize in full-stack web development, cloud-native applications, and AI-driven models
+            . Beyond coding, I enjoy exploring emerging technologies, working on projects that prepare me for top IT roles, and playing football or FC Mobile in my free time.
               </p>
             </div>
 
@@ -97,8 +95,8 @@ export function AboutSection() {
               className="grid grid-cols-3 gap-4 mt-8"
             >
               {[
-                { number: "50+", label: "Projects" },
-                { number: "5+", label: "Years Exp" },
+                { number: "15+", label: "Projects" },
+                { number: "2+", label: "Years Exp" },
                 { number: "100%", label: "Satisfaction" },
               ].map((stat, index) => (
                 <div key={index} className="text-center glass rounded-lg p-4 border border-white/10">

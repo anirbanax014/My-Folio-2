@@ -54,38 +54,38 @@ export function ContactSection() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@yourname.com',
-      href: 'mailto:hello@yourname.com',
+      value: 'anirbandas474671@gmail.com',
+      href: 'mailto:anirbandas474671@gmail.com',
       color: 'text-neon-blue'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
+      value: '+91 8388xxxx08',
       href: 'tel:+15551234567',
       color: 'text-neon-green'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
-      href: 'https://maps.google.com/?q=San+Francisco,CA',
+      value: 'Kolkata, India',
+      href: 'https://share.google/J3VYIrSRB42uoe6op',
       color: 'text-neon-purple'
     },
     {
       icon: Calendar,
       label: 'Schedule Call',
       value: 'Book a meeting',
-      href: 'https://calendly.com/yourname',
+      href: 'https://calendly.com/app/personal/profile',
       color: 'text-neon-pink'
     }
   ]
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/yourusername', label: 'GitHub', color: 'hover:text-gray-400' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/yourusername', label: 'LinkedIn', color: 'hover:text-blue-400' },
-    { icon: Twitter, href: 'https://twitter.com/yourusername', label: 'Twitter', color: 'hover:text-blue-300' },
-    { icon: MessageCircle, href: 'https://discord.gg/yourdiscord', label: 'Discord', color: 'hover:text-indigo-400' },
+    { icon: Github, href: 'https://github.com/anirbanax014', label: 'GitHub', color: 'hover:text-gray-400' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/anirban-das-79841a2b6?trk=contact-info', label: 'LinkedIn', color: 'hover:text-blue-400' },
+    { icon: Twitter, href: 'https://x.com/Roni93862011530', label: 'Twitter', color: 'hover:text-blue-300' },
+    { icon: MessageCircle, href: 'https://discord.com/channels/@me', label: 'Discord', color: 'hover:text-indigo-400' },
   ]
 
   return (
@@ -311,7 +311,7 @@ export function ContactSection() {
               </p>
               <div className="space-y-2 text-sm text-gray-400">
                 <p>• Response time: Within 24 hours</p>
-                <p>• Timezone: PST (UTC-8)</p>
+                <p>• Timezone: IST (UTC+5:30)</p>
                 <p>• Preferred communication: Email, Slack, or video calls</p>
               </div>
             </div>
@@ -320,9 +320,9 @@ export function ContactSection() {
             <div className="grid grid-cols-2 gap-4">
               {[
                 { number: "24h", label: "Response Time" },
-                { number: "50+", label: "Happy Clients" },
-                { number: "5+", label: "Years Experience" },
-                { number: "100%", label: "Project Success" },
+                { number: "20+", label: "Happy Clients" },
+                { number: "3+", label: "Years Experience" },
+                { number: "90%", label: "Project Success" },
               ].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -345,7 +345,7 @@ export function ContactSection() {
           transition={{ delay: 0.4 }}
           className="mt-20"
         >
-          <h3 className="text-2xl font-bold text-center mb-8">Frequently Asked Questions</h3>
+          <h3 className="text-2xl font-bold text-center mb-8">Frequently Asked Questions (FAQ.)</h3>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {[
               {
@@ -353,12 +353,12 @@ export function ContactSection() {
                 answer: "Project timelines vary based on complexity, but most projects range from 2-12 weeks. I'll provide a detailed timeline during our initial consultation."
               },
               {
-                question: "Do you work with international clients?",
-                answer: "Absolutely! I work with clients worldwide and am experienced in remote collaboration across different time zones."
+                question: "Do you work with other clients?",
+                answer: "Absolutely! I work with clients from various industries and am experienced in remote collaboration across different states."
               },
               {
                 question: "What technologies do you specialize in?",
-                answer: "I specialize in React, Next.js, Node.js, Python, AWS, and AI/ML technologies. I'm always learning new tools to deliver the best solutions."
+                answer: "I specialize in React, Next.js, Node.js, Python, Google Cloud, and AI/ML technologies. I'm always learning new tools to deliver the best solutions."
               },
               {
                 question: "Do you provide ongoing support?",
